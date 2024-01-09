@@ -9,6 +9,10 @@ const identify = {
 }
 
 const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Nest.js', 'Astro']
+
+const skillColor = 'navy'
+const fontWeight = 'bold'
+const textTransform = 'uppercase'
 ---
 
 <html lang="ja">
@@ -18,6 +22,18 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Nest.js', 'Astro']
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitile}</title>
+    <style define:vars={{ skillColor, fontWeight, textTransform }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textTransform);
+      }
+    </style>
   </head>
   <body>
     <a href="/">Home</a>
@@ -38,7 +54,7 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Nest.js', 'Astro']
     </ul>
     <p>My Skills</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
   </body>
 </html>
