@@ -1,3 +1,7 @@
+---
+const pageTitle = 'My Astro Learning Blog'
+---
+
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -7,17 +11,15 @@
     <title>Astro</title>
   </head>
   <body>
-    <a href="/">ホーム</a>
-    <a href="/about/">概要</a>
-    <a href="/blog/">ブログ</a>
-
-    <h1>私のAstroサイト</h1>
-    <h1>私のAstro学習ブログ</h1>
-    <p>ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <h1>{pageTitle}</h1>
+    <p>Here I will post my journey of learning Astro.</p>
     <ul>
-      <li><a href="/posts/post-1/">記事1</a></li>
-      <li><a href="/posts/post-2/">記事2</a></li>
-      <li><a href="/posts/post-3/">記事3</a></li>
+      <li><a href="/posts/post-1/">Post 1</a></li>
+      <li><a href="/posts/post-2/">Post 2</a></li>
+      <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
   </body>
 </html>
