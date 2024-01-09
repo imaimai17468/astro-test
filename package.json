@@ -7,7 +7,10 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write **/*.{css,scss,ts,tsx,astro}",
+    "lint:js": "eslint \"./src/**/*.{js,jsx,ts,tsx,astro}\" --fix --ignore-path .gitignore",
+    "lint:style": "stylelint \"./src/**/*.{css,scss,astro}\" --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.0",
