@@ -1,66 +1,31 @@
 ---
-import '../styles/global.css'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
-const pageTitile = 'About Me'
-
+const pageTitle = 'About Me'
 const identify = {
   firstName: 'imaimai',
   country: 'japan',
   occupation: 'Frontend Developer',
   hobbies: ['cooking', 'developing', 'watching streaming'],
 }
-
 const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Nest.js', 'Astro']
-
-const skillColor = 'navy'
-const fontWeight = 'bold'
-const textTransform = 'uppercase'
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitile}</title>
-    <style define:vars={{ skillColor, fontWeight, textTransform }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textTransform);
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <h1>{pageTitile}</h1>
-    <h2>with My Astro Site !</h2>
-    <p>
-      I am working on an introductory tutorial for Astro. This is the second page on my website and the first page I
-      have created myself!
-    </p>
-    <p>My Profile</p>
-    <ul>
-      <li>Name: {identify.firstName}</li>
-      <li>Country: {identify.country}</li>
-      <li>Occupation: {identify.occupation}</li>
-      <li>Hobbies: {identify.hobbies.map((hobby) => <span>{hobby} / </span>)}</li>
-    </ul>
-    <p>My Skills</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    <Footer />
-    <script>
-      import '../scripts/menu.js'
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>with My Astro Site !</h2>
+  <p>
+    I am working on an introductory tutorial for Astro. This is the second page on my website and the first page I have
+    created myself!
+  </p>
+  <p>My Profile</p>
+  <ul>
+    <li>Name: {identify.firstName}</li>
+    <li>Country: {identify.country}</li>
+    <li>Occupation: {identify.occupation}</li>
+    <li>Hobbies: {identify.hobbies.map((hobby) => <span>{hobby} / </span>)}</li>
+  </ul>
+  <p>My Skills</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>
