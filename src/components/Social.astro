@@ -1,5 +1,10 @@
 ---
 const { platform, username } = Astro.props
+
+type Props = {
+  platform: string
+  username: string
+}
 ---
 
 <a href={`https://${platform}.com/${username}`} target="_blank" rel="noopener noreferrer">{platform}</a>

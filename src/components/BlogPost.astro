@@ -1,5 +1,10 @@
 ---
 const { url, title } = Astro.props
+
+type Props = {
+  url: string
+  title: string
+}
 ---
 
 <li><a href={url}>{title}</a></li>
