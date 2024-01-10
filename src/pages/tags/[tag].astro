@@ -28,4 +28,3 @@ const { posts } = Astro.props
     {posts.map((post) => post.url && <BlogPost url={post.url} title={post.frontmatter.title} />)}
   </ul>
 </BaseLayout>
-@/types/frontmatter.type
