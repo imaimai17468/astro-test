@@ -1,4 +1,5 @@
 ---
+import { fade } from 'astro:transitions'
 import BaseLayout from './BaseLayout.astro'
 import type { Frontmatter } from '@/types/frontmatter.type'
 
@@ -10,8 +11,8 @@ type Props = {
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>著者: {frontmatter.author}</p>
-  <p><em>{frontmatter.description}</em></p>
+  <p><a href="/about/">著者: {frontmatter.author}</a></p>
+  <p transition:animate={fade({ duration: '2s' })}><em>{frontmatter.description}</em></p>
   <p>投稿日: {frontmatter.pubDate.slice(0, 10)}</p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
   <div class="tags">
