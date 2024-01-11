@@ -1,12 +1,9 @@
 ---
-import Footer from '@/components/Footer.astro'
-import Header from '@/components/Header.astro'
-import '@/styles/global.css'
+import { ViewTransitions } from 'astro:transitions'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import '../styles/global.css'
 const { pageTitle } = Astro.props
-
-type Props = {
-  pageTitle: string
-}
 ---
 
 <html lang="ja">
@@ -16,6 +13,7 @@ type Props = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header />
